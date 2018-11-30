@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import ru.itmo.wm4.domain.Notice;
 import ru.itmo.wm4.domain.User;
-import ru.itmo.wm4.service.CommentService;
-import ru.itmo.wm4.service.NoticeService;
-import ru.itmo.wm4.service.TagService;
-import ru.itmo.wm4.service.UserService;
+import ru.itmo.wm4.service.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -30,6 +27,13 @@ public class Page {
 
     @Autowired
     private TagService tagService;
+
+    @Autowired
+    private TestDomainService testDomainService;
+
+    public TestDomainService getTestDomainService() {
+        return testDomainService;
+    }
 
     @ModelAttribute
     public User getUser(HttpSession httpSession) {
